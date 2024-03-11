@@ -109,6 +109,9 @@ class Login : AppCompatActivity() {
         }
     }
 
+    /**
+     * Función para la transformación de un array de bytes a una imagen
+     */
 
     fun byteArrayToBitmap(byteArray: ByteArray): Bitmap {
         return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)

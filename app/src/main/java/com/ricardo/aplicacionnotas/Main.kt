@@ -28,6 +28,8 @@ class Main : AppCompatActivity() {
 
         foto.setImageBitmap(Login.datos.image)
 
+        // Action listeners
+
         perfil.setOnClickListener(){
 
             var i = Intent(this, Perfil::class.java)

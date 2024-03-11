@@ -34,6 +34,8 @@ class addNote : AppCompatActivity() {
         titulo = findViewById(R.id.editTitulo)
         nota = findViewById(R.id.editNota)
 
+        // Action Listeners
+
         guardar.setOnClickListener(){
 
             CoroutineScope(Dispatchers.IO).launch {
@@ -58,6 +60,8 @@ class addNote : AppCompatActivity() {
 
 
     }
+
+  // Toast con mensaje de verificación de operación
 
     private fun showToast(message: String, context: Context) {
         CoroutineScope(Dispatchers.Main).launch {

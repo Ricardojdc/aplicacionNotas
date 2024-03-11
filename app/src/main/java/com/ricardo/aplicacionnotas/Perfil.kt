@@ -30,6 +30,8 @@ class Perfil : AppCompatActivity() {
 
         imagen.setImageBitmap(Login.datos.image)
 
+        //Action listeners
+
 
         editar.setOnClickListener(){
 

@@ -49,21 +49,16 @@ class EditPerfil : AppCompatActivity() {
         username.setText(Login.datos.login)
         pass.setText(Login.datos.password)
 
+        // Action Listeners
+
         foto.setOnClickListener(){
 
             CoroutineScope(Dispatchers.IO).launch {
-//                image = getBitmapFromDrawable(this@EditPerfil, R.drawable.fondo)
-//
-//                val profileImageByteArray = convertBitmapToByteArray(image)
-//                db.userDao().updateProfileImage(Login.id.toLong(), profileImageByteArray)
 
                 val pickImageIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                 pickImageIntent.type = "image/*"
                 startActivityForResult(pickImageIntent, PICK_IMAGE_REQUEST)
 
-
-//                val profileImageByteArray = convertBitmapToByteArray(Login.datos.image!!)
-//                db.userDao().updateProfileImage(Login.id.toLong(), profileImageByteArray)
             }
 
         }
@@ -97,15 +92,9 @@ class EditPerfil : AppCompatActivity() {
 
     }
 
-    fun convertBitmapToByteArray(bitmap: Bitmap): ByteArray {
-        val stream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
-        return stream.toByteArray()
-    }
-
-    fun getBitmapFromDrawable(context: Context, resourceId: Int): Bitmap {
-        return BitmapFactory.decodeResource(context.resources, resourceId)
-    }
+    /**
+     * Función de devolución de código de oepración
+     */
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -125,6 +114,10 @@ class EditPerfil : AppCompatActivity() {
             }
         }
     }
+
+    /**
+     * Función para transformar una imagen a un array de bytes
+     */
 
     fun bitmapToByteArray(bitmap: Bitmap): ByteArray {
         val outputStream = ByteArrayOutputStream()

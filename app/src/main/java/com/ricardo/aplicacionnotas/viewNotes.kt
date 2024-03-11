@@ -31,9 +31,11 @@ class viewNotes : AppCompatActivity() {
         recycler = findViewById(R.id.rvItems)
         recycler.layoutManager = LinearLayoutManager(this)
 
-        val dataList = generateDataList() // Assume you have a function to generate data
+        val dataList = generateDataList()
         val adapter = MyAdapter(generateDataList())
         recycler.adapter = adapter
+
+        //Action listener
 
         volver.setOnClickListener(){
 
@@ -44,6 +46,10 @@ class viewNotes : AppCompatActivity() {
 
 
     }
+
+    /**
+     * Función para rellenar la lista mutable con los datos de notas de un usuario concreto
+     */
 
     private fun generateDataList(): List<dataModel> {
 

@@ -29,8 +29,4 @@ data class Notas (
 
     ){
 
-
-    // Función redefinida para mostrar los datos correctamente
-
-
 }
